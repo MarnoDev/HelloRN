@@ -5,7 +5,17 @@
  */
 'use strict'
 import React, {Component} from "react";
-import {AppRegistry, Text, Image, View, StyleSheet} from "react-native";
+import {
+    AppRegistry,
+    Text,
+    Image,
+    View,
+    StyleSheet,
+    TextInput,
+    ScrollView,
+    ListView
+}
+    from "react-native";
 /**
  * ==============================
  * 【1.1 Hello world】
@@ -157,7 +167,7 @@ class FlexBoxTest extends Component {
             flexDirection: 'row',
             flexWrap: 'wrap',
             justifyContent: 'space-around',
-            alignItems:'center',
+            alignItems: 'center',
         }}>
             <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}}/>
             <View style={{width: 50, height: 120, backgroundColor: 'skyblue'}}/>
@@ -165,5 +175,125 @@ class FlexBoxTest extends Component {
         </View>)
     }
 }
+/**
+ * ==============================
+ * 【4.1 TextInput处理文本输入】- 监听输入长度
+ * ==============================
+ */
+class CountTextLength extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {text: ''};
+    }
 
-AppRegistry.registerComponent('HelloWorld', () => FlexBoxTest);
+    render() {
+        return (<View style={{padding: 10}}>
+            <TextInput
+                style={{height: 40}}
+                placeholder="请输入"
+                onChangeText={(text)=> {
+                    this.setState({text})
+                }}
+            />
+
+            <Text style={{padding: 10, fontSize: 42}}>
+                {this.state.text.length}
+            </Text>
+        </View>);
+    }
+}
+/**
+ * ==============================
+ * 【5.1 滚动视图的使用一】 - ScrollView的简单使用
+ * ==============================
+ */
+class ScrollViewTest extends Component {
+    render() {
+        let pic = {uri: 'https://www.baidu.com/img/bd_logo1.png'}
+        return (<ScrollView>
+            <Text style={scrollStyle.text}>这是第一组图片</Text>
+            <Image source={pic} style={scrollStyle.image}/>
+            <Text style={scrollStyle.line}></Text>
+            <Image source={pic} style={scrollStyle.image}/>
+            <Text style={scrollStyle.line}></Text>
+            <Image source={pic} style={scrollStyle.image}/>
+            <Text style={scrollStyle.line}></Text>
+            <Image source={pic} style={scrollStyle.image}/>
+            <Text style={scrollStyle.line}></Text>
+            <Image source={pic} style={scrollStyle.image}/>
+            <Text style={scrollStyle.line}></Text>
+            <Image source={pic} style={scrollStyle.image}/>
+            <Text style={scrollStyle.line}></Text>
+            <Image source={pic} style={scrollStyle.image}/>
+            <Text style={scrollStyle.text}>这是第二组图片</Text>
+            <Image source={pic} style={scrollStyle.image}/>
+            <Text style={scrollStyle.line}></Text>
+            <Image source={pic} style={scrollStyle.image}/>
+            <Text style={scrollStyle.line}></Text>
+            <Image source={pic} style={scrollStyle.image}/>
+            <Text style={scrollStyle.line}></Text>
+            <Image source={pic} style={scrollStyle.image}/>
+            <Text style={scrollStyle.line}></Text>
+            <Image source={pic} style={scrollStyle.image}/>
+            <Text style={scrollStyle.line}></Text>
+            <Image source={pic} style={scrollStyle.image}/>
+            <Text style={scrollStyle.text}>这是第三组图片</Text>
+            <Image source={pic} style={scrollStyle.image}/>
+            <Text style={scrollStyle.line}></Text>
+            <Image source={pic} style={scrollStyle.image}/>
+            <Text style={scrollStyle.line}></Text>
+            <Image source={pic} style={scrollStyle.image}/>
+            <Text style={scrollStyle.line}></Text>
+            <Image source={pic} style={scrollStyle.image}/>
+            <Text style={scrollStyle.line}></Text>
+            <Image source={pic} style={scrollStyle.image}/>
+            <Text style={scrollStyle.line}></Text>
+            <Image source={pic} style={scrollStyle.image}/>
+        </ScrollView>)
+    }
+}
+
+const scrollStyle = StyleSheet.create({
+    image: {
+        width: 200,
+        height: 100,
+        alignSelf: 'center',
+        backgroundColor: 'white'
+    },
+    text: {
+        width: window.width,
+        fontSize: 30,
+        alignSelf: 'center',
+        backgroundColor: 'powderblue'
+    },
+    line: {
+        height: 1,
+        backgroundColor: 'gray'
+    }
+})
+
+/**
+ * ==============================
+ * 【5.2 滚动视图的使用二】 - ListView的简单使用
+ * ==============================
+ */
+class ListViewDemo extends Component {
+    constructor(props) {
+        super(props);
+        const ds = new ListView.DataSource({rowHasChanged: (r1, r2)=>r1 !== r2});
+        this.state = {
+            dataSource: ds.cloneWithRows(['Jhon', '王五', 'James', 'Jimmy', 'Jackson', 'Jillian','Jhon', '王五', 'James', 'Jimmy', 'Jackson', 'Jillian','Jhon', '王五', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'])
+        };
+    }
+
+    render() {
+        return (<View style={{flex: 1, paddingTop: 22}}>
+            <ListView
+                dataSource={this.state.dataSource}
+                renderRow={(rowData)=><Text style={scrollStyle.text}>{rowData}</Text>}
+            />
+        </View>)
+    }
+}
+
+AppRegistry.registerComponent('HelloWorld', () => ListViewDemo);
