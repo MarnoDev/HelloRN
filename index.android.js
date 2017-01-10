@@ -5,9 +5,7 @@
  */
 'use strict'
 import React, {Component} from "react";
-import {AppRegistry, Text, Image, View,
-    StyleSheet, TextInput, ScrollView, ListView,
-    Navigator} from "react-native";
+import {AppRegistry, Text, Image, View, StyleSheet, TextInput, ScrollView, ListView, Navigator} from "react-native";
 import SecondScene from "./SecondScene";
 import TabNavigator from "react-native-tab-navigator";
 
@@ -454,5 +452,44 @@ const itemStyle = StyleSheet.create({
     }
 })
 
+/**
+ * ===================================================
+ * 【10.1 布局练习】
+ * ===================================================
+ */
+class LayoutTest extends Component {
+    render() {
 
-AppRegistry.registerComponent('HelloWorld', () => GetScreenDimens);
+        return (
+            <View style={LayoutTestStyle.container}>
+                <Image
+                    source={require('./imgs/me.png')}
+                    style={LayoutTestStyle.image}
+                />
+                <Text style={LayoutTestStyle.text}>这里是简单的文字</Text>
+            </View>
+        )
+    }
+}
+
+var LayoutTestStyle = StyleSheet.create({
+    container: {
+        backgroundColor: "#05A5D1",
+        flexDirection: "row",
+        padding: 10,
+        alignItems: "center",
+    },
+    image: {
+        height: 80,
+        width: 80,
+        borderRadius: 40,
+        resizeMode: "cover"
+    },
+    text: {
+        fontSize: 20,
+        paddingLeft: 16
+    }
+});
+
+
+AppRegistry.registerComponent('HelloWorld', () => LayoutTest);
