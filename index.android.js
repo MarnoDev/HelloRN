@@ -462,11 +462,8 @@ class LayoutTest extends Component {
 
         return (
             <View style={LayoutTestStyle.container}>
-                <Image
-                    source={require('./imgs/me.png')}
-                    style={LayoutTestStyle.image}
-                />
-                <Text style={LayoutTestStyle.text}>这里是简单的文字</Text>
+                <Image source={require('./imgs/me.png')} style={LayoutTestStyle.image}/>
+                <Text style={LayoutTestStyle.text}>这里是简单的文字这里是简单的文字这里是简单的文字</Text>
             </View>
         )
     }
@@ -477,7 +474,7 @@ var LayoutTestStyle = StyleSheet.create({
         backgroundColor: "#05A5D1",
         flexDirection: "row",
         padding: 10,
-        alignItems: "center",
+        alignItems: "flex-start"
     },
     image: {
         height: 80,
