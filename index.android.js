@@ -5,7 +5,14 @@
  */
 'use strict'
 import React, {Component} from "react";
-import {AppRegistry, Text, Image, View, StyleSheet, TextInput, ScrollView, ListView, Navigator} from "react-native";
+import {
+    AppRegistry,
+    Text,
+    Image,
+    View,
+    StyleSheet,
+    TextInput, ScrollView, ListView, Navigator
+} from "react-native";
 import SecondScene from "./SecondScene";
 import TabNavigator from "react-native-tab-navigator";
 
@@ -186,7 +193,7 @@ class CountTextLength extends Component {
     render() {
         return (<View style={{padding: 10}}>
             <TextInput
-                style={{height: 40}}
+                style={{height: 80}}
                 placeholder="请输入"
                 onChangeText={(text)=> {
                     this.setState({text})
@@ -469,7 +476,7 @@ class LayoutTest extends Component {
     }
 }
 
-var LayoutTestStyle = StyleSheet.create({
+const LayoutTestStyle = StyleSheet.create({
     container: {
         backgroundColor: "#05A5D1",
         flexDirection: "row",
@@ -479,14 +486,170 @@ var LayoutTestStyle = StyleSheet.create({
     image: {
         height: 80,
         width: 80,
-        borderRadius: 40,
-        resizeMode: "cover"
+        borderRadius: 80,
+        resizeMode: "cover",
     },
     text: {
         fontSize: 20,
-        paddingLeft: 16
+        paddingLeft: 16,
     }
 });
 
+/**
+ * ===================================================
+ * 【10.2 Flex练习】
+ * ===================================================
+ */
+class FlexTest extends Component {
+    render() {
+        return (
+            <View style={FlexTestStyle.container}>
+                <Text style={FlexTestStyle.item}>1</Text>
+                <Text style={FlexTestStyle.item}>2</Text>
+                <Text style={FlexTestStyle.item}>3</Text>
+                <Text style={FlexTestStyle.item}>4</Text>
+                <Text style={FlexTestStyle.item_flex_end}>5</Text>
+            </View>
+        )
+    }
+}
 
-AppRegistry.registerComponent('HelloWorld', () => LayoutTest);
+const FlexTestStyle = StyleSheet.create({
+    container: {
+        backgroundColor: "#0ff",
+        flexDirection: "row",
+        flex: 1,
+    },
+    item: {
+        backgroundColor: "#f0f",
+        flexGrow: 1,//相当于Android控件中的weight属性
+        margin: 4,
+        height: 100,
+    },
+    item_flex_end: {
+        backgroundColor: "#f0f",
+        flexGrow: 1,//相当于Android控件中的weight属性
+        margin: 4,
+        height: 100,
+        alignSelf: "flex-end",
+    }
+})
+
+/**
+ * ===================================================
+ * 【10.3 Flex骰子布局练习】
+ * ===================================================
+ */
+class FlexDiceTest extends Component {
+    render() {
+        return (
+            <View style={FlexDiceTestStyle.container}>
+                <Text style={FlexDiceTestStyle.item1}>1</Text>
+                <Text style={FlexDiceTestStyle.item2}>2</Text>
+                <Text style={FlexDiceTestStyle.item3}>3</Text>
+                <Text style={FlexDiceTestStyle.item4}>4</Text>
+                <Text style={FlexDiceTestStyle.item5}>5</Text>
+                <Text style={FlexDiceTestStyle.item6}>6</Text>
+                <Text style={FlexDiceTestStyle.item7}>7</Text>
+                <Text style={FlexDiceTestStyle.item8}>8</Text>
+                <Text style={FlexDiceTestStyle.item9}>9</Text>
+            </View>
+        )
+    }
+}
+
+const FlexDiceTestStyle = StyleSheet.create({
+    container: {
+        backgroundColor: "blue",
+        height: 300,
+        width: 300,
+        justifyContent: "space-between",
+        flexWrap: "wrap",
+        flexDirection:"row",
+        alignContent:"space-between"
+    },
+    item1: {
+        color: "#fff",
+        backgroundColor: "#000",
+        height: 80,
+        width: 80,
+        textAlign: "center",
+        textAlignVertical: "center",
+        margin: 4,
+    },
+    item2: {
+        color: "#fff",
+        backgroundColor: "#000",
+        height: 80,
+        width: 80,
+        textAlign: "center",
+        textAlignVertical: "center",
+        margin: 4,
+    },
+    item3: {
+        color: "#fff",
+        backgroundColor: "#000",
+        height: 80,
+        width: 80,
+        textAlign: "center",
+        textAlignVertical: "center",
+        margin: 4,
+    },
+    item4: {
+        color: "#fff",
+        backgroundColor: "#000",
+        height: 80,
+        width: 80,
+        textAlign: "center",
+        textAlignVertical: "center",
+        margin: 4,
+        alignSelf:"flex-end"
+    },
+    item5: {
+        color: "#fff",
+        backgroundColor: "#000",
+        height: 80,
+        width: 80,
+        textAlign: "center",
+        textAlignVertical: "center",
+        margin: 4,
+    },
+    item6: {
+        color: "#fff",
+        backgroundColor: "#000",
+        height: 80,
+        width: 80,
+        textAlign: "center",
+        textAlignVertical: "center",
+        margin: 4,
+    },
+    item7: {
+        color: "#fff",
+        backgroundColor: "#000",
+        height: 80,
+        width: 80,
+        textAlign: "center",
+        textAlignVertical: "center",
+        margin: 4,
+    },
+    item8: {
+        color: "#fff",
+        backgroundColor: "#000",
+        height: 80,
+        width: 80,
+        textAlign: "center",
+        textAlignVertical: "center",
+        margin: 4,
+    },
+    item9: {
+        color: "#fff",
+        backgroundColor: "#000",
+        height: 80,
+        width: 80,
+        textAlign: "center",
+        textAlignVertical: "center",
+        margin: 4,
+    }
+})
+
+AppRegistry.registerComponent('HelloWorld', () => FlexDiceTest);
