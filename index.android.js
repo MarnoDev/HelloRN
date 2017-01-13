@@ -11,7 +11,11 @@ import {
     Image,
     View,
     StyleSheet,
-    TextInput, ScrollView, ListView, Navigator
+    TextInput,
+    ScrollView,
+    ListView,
+    Navigator,
+    ToastAndroid
 } from "react-native";
 import SecondScene from "./SecondScene";
 import TabNavigator from "react-native-tab-navigator";
@@ -306,36 +310,93 @@ class ListViewDemo extends Component {
  * 【6.1 网络请求】 -使用Fetch发起网络请求
  * ===================================================
  */
-function getShopList() {
-    const url = 'http://120.25.102.194/index.php/api/shop/shopList';
-    return fetch(url)
-        .then((response)=>response.json())
-        .then(
-            (responseJson)=> {
-                var shop = responseJson.data.shop;
-                for (let item of shop) {
-                    console.log(item);
-                }
-                // console.log(shop);
-                return shop;
-            }
-        )
-        .catch(
-            (error)=> {
-                console.error(error);
-            }
-        )
-}
-
 class FetchNetData extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            shop: null
+        };
+    }
+    //发起网络请求，获取数据
+    fetchShopList() {
+        const url = 'http://120.25.102.194/index.php/api/shop/shopList';
+        fetch(url)
+            .then((response)=>response.json())
+            .then(
+                (responseJson)=> {
+                    var shop = responseJson.data.shop;
+                    ToastAndroid.show(responseJson.msg, ToastAndroid.LONG)
+                    var firstShop = shop[0];
+                    console.log(firstShop);
+                    this.setState({
+                        shop: firstShop,
+                    })
+                }
+            )
+            .catch((error)=>console.error(error))
+    }
+    //页面渲染完成后会主动回调该方法
+    componentDidMount() {
+        this.fetchShopList();
+    }
+
+    //绘制界面
     render() {
-        return (<View >
-            <Text onPress={
-                ()=> getShopList()
-            } style={{backgroundColor: 'blue', fontSize: 30}}>点我获取网络数据</Text>
-        </View>)
+        let item = this.state.shop;
+        //这里需要判断网络请求完成与否，如果item为空时，会发生空指针
+        if (item) {
+            return this.renderItem(item);
+        }
+        return (
+            <Text style={{textAlign:"center",fontSize:16,padding:20}}>加载中...</Text>
+        )
+    }
+
+    //绘制展示数据的界面
+    renderItem(item) {
+        return (
+            <View style={ShopItemStyle.container_out}>
+                <Image style={ShopItemStyle.image_shopLogo} source={{uri: item.shop_logo}}/>
+                <View style={ShopItemStyle.container_right}>
+                    <Text style={ShopItemStyle.text_shopName}>{item.shop_name}</Text>
+                    <Text style={ShopItemStyle.text_shopAddress}>{item.shop_address}</Text>
+                </View>
+            </View>
+        )
     }
 }
+
+//网络请求按钮
+const ShopItemStyle = StyleSheet.create({
+    container_out: {
+        backgroundColor: "white",
+        height: 100,
+        flexDirection: "row",
+        alignItems: "center"
+    },
+    container_right: {
+        flexDirection: "column",
+        height: 80,
+        flexGrow: 1,
+    },
+    image_shopLogo: {
+        borderRadius: 80,
+        width: 80,
+        height: 80,
+        resizeMode: "cover",
+        marginHorizontal: 12
+    },
+    text_shopName: {
+        color: "black",
+        fontSize: 16,
+        lineHeight: 24,
+    },
+    text_shopAddress: {
+        color: "gray",
+        fontSize: 12,
+        lineHeight: 20,
+    },
+})
 /**
  * ===================================================
  * 【7.1 页面跳转】 - 使用Navigator进行页面跳转
@@ -565,8 +626,7 @@ const FlexDiceTestStyle = StyleSheet.create({
         width: 300,
         justifyContent: "space-between",
         flexWrap: "wrap",
-        flexDirection:"row",
-        alignContent:"space-between"
+        flexDirection: "row",
     },
     item1: {
         color: "#fff",
@@ -603,7 +663,7 @@ const FlexDiceTestStyle = StyleSheet.create({
         textAlign: "center",
         textAlignVertical: "center",
         margin: 4,
-        alignSelf:"flex-end"
+        alignSelf: "flex-end"
     },
     item5: {
         color: "#fff",
@@ -652,4 +712,4 @@ const FlexDiceTestStyle = StyleSheet.create({
     }
 })
 
-AppRegistry.registerComponent('HelloWorld', () => FlexDiceTest);
+AppRegistry.registerComponent('HelloWorld', () => FetchNetData);
