@@ -13,19 +13,19 @@ export default class BannerTest extends Component {
         this.banners = [
             {
                 title: 'beauty 1',
-                image: 'http://www.qq745.com/uploads/allimg/141106/1-141106153Q5.png',
+                image: 'http://source.51yrz.com/1466071007.jpg?imageView2/1/w/600/h/300',
             },
             {
                 title: 'beauty 2',
-                image: 'http://img1.3lian.com/2015/a1/53/d/200.jpg',
+                image: 'http://source.51yrz.com/1466126704.jpg?imageView2/1/w/600/h/300',
             },
             {
                 title: 'The next banner has no title',
-                image: 'http://img1.3lian.com/2015/a1/53/d/198.jpg',
+                image: 'http://source.51yrz.com/1466071229.jpg?imageView2/1/w/600/h/300',
             },
             {
                 // title: 'no title',
-                image: 'http://image.tianjimedia.com/uploadImages/2012/235/9J92Z5E5R868.jpg',
+                image: 'http://source.51yrz.com/1466473308.jpg?imageView2/1/w/600/h/300',
             },
         ];
 
