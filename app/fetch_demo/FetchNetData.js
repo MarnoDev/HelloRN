@@ -28,7 +28,7 @@ export default class FetchNetData extends Component {
             .then(
                 (responseJson)=> {
                     var shop = responseJson.data.shop;
-                    ToastAndroid.show(responseJson.msg, ToastAndroid.LONG)
+                    ToastAndroid.show(responseJson.msg, ToastAndroid.SHORT)
                     var firstShop = shop[0];
                     console.log(firstShop);
                     this.setState({

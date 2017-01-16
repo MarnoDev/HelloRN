@@ -5,7 +5,6 @@ import Banner from "react-native-banner";
 /**
  * Created by marno on 2017/1/13.
  */
-
 export default class BannerTest extends Component {
     constructor(props) {
         super(props);

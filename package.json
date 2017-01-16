@@ -12,7 +12,10 @@
     "react-native-banner": "^0.1.0",
     "react-native-scrollable-tab-view": "^0.7.0",
     "react-native-tab-navigator": "^0.3.3",
-    "react-native-vector-icons": "^3.0.0"
+    "react-native-tab-view": "0.0.48",
+    "react-native-tabbar-navigator": "^0.4.2",
+    "react-native-vector-icons": "^3.0.0",
+    "react-native-xtabbar": "^0.2.1"
   },
   "jest": {
     "preset": "react-native"
