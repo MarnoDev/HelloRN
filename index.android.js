@@ -13,7 +13,9 @@ import {AppRegistry} from "react-native";
 // import BannerTest from './app/library_demo/BannerTest';
 // import TopTabViewTest from './app/library_demo/tab_demo/TopTabViewTest';
 // import BottomTabViewTest from './app/library_demo/tab_demo/BottomTabViewTest'
-import TaberTest from './app/library_demo/tab_demo/TaberTest'
+// import TaberTest from './app/library_demo/tab_demo/TaberTest'
+import AnatomyTest from './app/nativebase_demo/AnatomyTest';
+
 
 // AppRegistry.registerComponent('HelloWorld', () => HelloWorld);
 // AppRegistry.registerComponent('HelloWorld', ()=>FlexTest);
@@ -21,4 +23,5 @@ import TaberTest from './app/library_demo/tab_demo/TaberTest'
 // AppRegistry.registerComponent('HelloWorld', () => FetchNetData);
 // AppRegistry.registerComponent('HelloWorld', ()=>TopTabViewTest);
 // AppRegistry.registerComponent('HelloWorld', ()=>BottomTabViewTest);
-AppRegistry.registerComponent('HelloWorld', ()=>TaberTest);
+// AppRegistry.registerComponent('HelloWorld', ()=>TaberTest);
+AppRegistry.registerComponent('HelloWorld', ()=>AnatomyTest);
