@@ -14,14 +14,16 @@ import {AppRegistry} from "react-native";
 // import TopTabViewTest from './app/library_demo/tab_demo/TopTabViewTest';
 // import BottomTabViewTest from './app/library_demo/tab_demo/BottomTabViewTest'
 // import TaberTest from './app/library_demo/tab_demo/TaberTest'
-import AnatomyTest from './app/nativebase_demo/AnatomyTest';
-
+// import AnatomyTest from './app/nativebase_demo/AnatomyTest';
+import ScrollViewTest from './app/scroll_demo/ScrollViewTest'
 
 // AppRegistry.registerComponent('HelloWorld', () => HelloWorld);
 // AppRegistry.registerComponent('HelloWorld', ()=>FlexTest);
 // AppRegistry.registerComponent('HelloWorld', () => FlexDiceTest);
 // AppRegistry.registerComponent('HelloWorld', () => FetchNetData);
+// AppRegistry.registerComponent('HelloWorld', () => BannerTest);
 // AppRegistry.registerComponent('HelloWorld', ()=>TopTabViewTest);
 // AppRegistry.registerComponent('HelloWorld', ()=>BottomTabViewTest);
 // AppRegistry.registerComponent('HelloWorld', ()=>TaberTest);
-AppRegistry.registerComponent('HelloWorld', ()=>AnatomyTest);
+// AppRegistry.registerComponent('HelloWorld', ()=>AnatomyTest);
+AppRegistry.registerComponent('HelloWorld', ()=>ScrollViewTest);

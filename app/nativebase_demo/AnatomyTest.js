@@ -1,5 +1,7 @@
 import React, {Component} from "react";
-import {Container, Header, Title, Content, Footer, FooterTab, Button, Icon} from "native-base";
+import {
+    Container, Header, Title, Content, Button, Icon
+} from "native-base";
 import FetchNetData from "../fetch_demo/FetchNetData";
 
 /**
@@ -12,37 +14,21 @@ export default class AnatomyTest extends Component {
         return (
             <Container>
                 <Header>
-                    <Button>
-                        <Icon name='sidebar'/>
+
+                    <Button transparent>
+                        <Icon name='ios-arrow-back'/>
                     </Button>
-                    <Title>游戏头条</Title>
 
+                    <Title>Beauty</Title>
 
-                    <Button>
-                        <Icon name='ios-call'/>
+                    <Button transparent>
+                        <Icon name='ios-menu'/>
                     </Button>
                 </Header>
 
                 <Content>
                     <FetchNetData/>
                 </Content>
-
-                <Footer>
-                    <FooterTab>
-                        <Button >
-                            <Icon name='ios-call'/>
-                        </Button>
-                        <Button transparent>
-                            <Icon name='ios-call'/>
-                        </Button>
-                        <Button transparent>
-                            <Icon name='ios-call'/>
-                        </Button>
-                        <Button transparent>
-                            <Icon name='ios-call'/>
-                        </Button>
-                    </FooterTab>
-                </Footer>
             </Container>
         )
     }

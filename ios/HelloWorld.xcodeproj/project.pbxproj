@@ -44,6 +44,7 @@
 		C057070A920543A18540161C /* SF-UI-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 92A189B9313C4F77BA8783DF /* SF-UI-Text-Regular.otf */; };
 		FBA241E833B54177BE8234C5 /* Skia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E3B24E075C7475AA6E178F4 /* Skia.ttf */; };
 		538EA3F98D534066B9C8C193 /* Times New Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6BA2910174546E3A444D978 /* Times New Roman.ttf */; };
+		F036A32B65BC47F691929E71 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B9DDC18304CE4268BE03F85D /* MaterialCommunityIcons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,7 @@
 		92A189B9313C4F77BA8783DF /* SF-UI-Text-Regular.otf */ = {isa = PBXFileReference; name = "SF-UI-Text-Regular.otf"; path = "../node_modules/native-base/Fonts/SF-UI-Text-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		5E3B24E075C7475AA6E178F4 /* Skia.ttf */ = {isa = PBXFileReference; name = "Skia.ttf"; path = "../node_modules/native-base/Fonts/Skia.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		E6BA2910174546E3A444D978 /* Times New Roman.ttf */ = {isa = PBXFileReference; name = "Times New Roman.ttf"; path = "../node_modules/native-base/Fonts/Times New Roman.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B9DDC18304CE4268BE03F85D /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; name = "MaterialCommunityIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -378,6 +380,7 @@
 				92A189B9313C4F77BA8783DF /* SF-UI-Text-Regular.otf */,
 				5E3B24E075C7475AA6E178F4 /* Skia.ttf */,
 				E6BA2910174546E3A444D978 /* Times New Roman.ttf */,
+				B9DDC18304CE4268BE03F85D /* MaterialCommunityIcons.ttf */,
 			);
 			name = Resources;
 			path = "";
@@ -606,6 +609,7 @@
 				C057070A920543A18540161C /* SF-UI-Text-Regular.otf in Resources */,
 				FBA241E833B54177BE8234C5 /* Skia.ttf in Resources */,
 				538EA3F98D534066B9C8C193 /* Times New Roman.ttf in Resources */,
+				F036A32B65BC47F691929E71 /* MaterialCommunityIcons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

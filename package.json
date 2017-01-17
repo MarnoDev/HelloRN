@@ -7,15 +7,16 @@
     "test": "jest"
   },
   "dependencies": {
-    "native-base": "^0.5.21",
+    "native-base": "^0.5.22",
     "react": "15.4.1",
-    "react-native": "0.38.0",
+    "react-native": "^0.40.0",
     "react-native-banner": "^0.1.0",
     "react-native-scrollable-tab-view": "^0.7.0",
+    "react-native-swiper": "^1.5.4",
     "react-native-tab-navigator": "^0.3.3",
     "react-native-tab-view": "0.0.48",
     "react-native-tabbar-navigator": "^0.4.2",
-    "react-native-vector-icons": "^3.0.0",
+    "react-native-vector-icons": "^4.0.0",
     "react-native-xtabbar": "^0.2.1"
   },
   "jest": {
