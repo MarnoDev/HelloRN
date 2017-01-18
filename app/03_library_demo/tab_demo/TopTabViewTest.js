@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {View, StyleSheet} from 'react-native';
 import {TabViewAnimated, TabBarTop} from 'react-native-tab-view';
-import FlexTest from "../../flex_demo/FlexTest";
-import FlexDiceTest from "../../flex_demo/FlexDiceTest";
-import FetchNetData from "../../fetch_demo/FetchNetData";
-import BannerTest from '../../library_demo/BannerTest';
+import FlexTest from "../../01_flex_demo/FlexTest";
+import FlexDiceTest from "../../01_flex_demo/FlexDiceTest";
+import FetchNetData from "../../02_fetch_demo/FetchNetData";
+import BannerTest from '..//BannerTest';
 
 /**
  * Created by marno on 2017/1/16

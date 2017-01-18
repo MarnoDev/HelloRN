@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {
     Container, Header, Title, Content, Button, Icon
 } from "native-base";
-import FetchNetData from "../fetch_demo/FetchNetData";
+import FetchNetData from "../02_fetch_demo/FetchNetData";
 
 /**
  * Created by marno on 2017/1/16

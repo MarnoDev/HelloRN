@@ -3,7 +3,7 @@
  * Desc:
  */
 import React, {Component} from "react";
-import {StyleSheet, Image, Text, Dimensions, TouchableWithoutFeedback} from "react-native";
+import {StyleSheet, Image, Text, Dimensions, TouchableOpacity} from "react-native";
 
 export default class VideoListItem extends Component {
     constructor(props) {
@@ -20,11 +20,13 @@ export default class VideoListItem extends Component {
 
     render() {
         return (
-            <Image
-                style={VideoListItemStyle.image_bg}
-                source={{uri: this.props.imgUrl}}>
-                <Text style={VideoListItemStyle.title}>{this.props.title}</Text>
-            </Image>
+            <TouchableOpacity activeOpacity={0.9} onPress={this.props.onItemClick}>
+                <Image
+                    style={VideoListItemStyle.image_bg}
+                    source={{uri: this.props.imgUrl}}>
+                    <Text style={VideoListItemStyle.title}>{this.props.title}</Text>
+                </Image>
+            </TouchableOpacity>
         )
     }
 }

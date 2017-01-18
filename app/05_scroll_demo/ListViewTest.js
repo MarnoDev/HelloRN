@@ -3,9 +3,10 @@
  * Desc:使用ListView展示网络数据
  */
 import React, {Component} from "react";
-import {ListView, ToastAndroid, Text, View, RefreshControl} from "react-native";
+import {ListView, Text, RefreshControl} from "react-native";
 import VideoListItem from "./VideoListItem";
 import ToastUtil from "../utils/ToastUtil";
+import BannerTest from "../03_library_demo/BannerTest";
 
 //视频地址，下一页链接会在json中一起返回
 const videoUrl = 'http://baobab.wandoujia.com/api/v1/feed?num=1';
@@ -47,15 +48,13 @@ export default class ListViewTest extends Component {
             return (
                 <ListView
                     dataSource={this.state.dataSource.cloneWithRows(this.state.data)}
-                    renderRow={(rowData, sectionId, rowId)=>this._renderRow(rowData)}
+                    renderRow={(rowData, sectionId, rowId)=>this._renderRow(rowData, rowId)}
                     enableEmptySections={true}
                     refreshControl={
                         <RefreshControl
                             refreshing={this.state.isRefreshing}
                             onRefresh={()=>this.fetchVideoList()}
-                        />
-                    }
-
+                        />}
                 />
             )
         } else {
@@ -66,10 +65,24 @@ export default class ListViewTest extends Component {
     }
 
     //渲染列表项
-    _renderRow(rowData) {
+    _renderRow(rowData, rowId) {
         return <VideoListItem
+            onItemClick={()=>this._onItemClick(rowData, rowId)}
             imgUrl={rowData.coverForFeed}
             title={rowData.title}/>
+    }
+
+    //处理列表item的点击事件
+    _onItemClick(rowData, rowId) {
+        ToastUtil.show("点击了" + rowId);
+        const {navigator} = this.props;
+        if(navigator) {
+            navigator.push({
+                name: 'BannerTest',
+                component: BannerTest,
+            });
+        }
+
     }
 
     //发起网络请求，获取数据
