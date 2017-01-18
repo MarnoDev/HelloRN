@@ -16,7 +16,7 @@ import {AppRegistry} from "react-native";
 // import TaberTest from './app/library_demo/tab_demo/TaberTest'
 // import AnatomyTest from './app/nativebase_demo/AnatomyTest';
 // import ScrollViewTest from './app/scroll_demo/ScrollViewTest'
-import VideoItem from './app/scroll_demo/VideoListItem';
+import ListViewTest from './app/scroll_demo/ListViewTest';
 
 // AppRegistry.registerComponent('HelloWorld', () => HelloWorld);
 // AppRegistry.registerComponent('HelloWorld', ()=>FlexTest);
@@ -28,4 +28,4 @@ import VideoItem from './app/scroll_demo/VideoListItem';
 // AppRegistry.registerComponent('HelloWorld', ()=>TaberTest);
 // AppRegistry.registerComponent('HelloWorld', ()=>AnatomyTest);
 // AppRegistry.registerComponent('HelloWorld', ()=>ScrollViewTest);
-AppRegistry.registerComponent('HelloWorld', ()=>VideoItem);
+AppRegistry.registerComponent('HelloWorld', ()=>ListViewTest);
