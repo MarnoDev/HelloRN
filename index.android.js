@@ -17,7 +17,8 @@ import {AppRegistry} from "react-native";
 // import AnatomyTest from './app/04_nativebase_demo/AnatomyTest';
 // import ScrollViewTest from './app/05_scroll_demo/ScrollViewTest'
 // import ListViewTest from './app/05_scroll_demo/ListViewTest';
-import MainPage from './app/eyepetizer_demo/MainPage';
+// import MainPage from './app/eyepetizer_demo/MainPage';
+import StartUp from './app/eyepetizer_demo/StartUp';
 
 // AppRegistry.registerComponent('HelloWorld', () => HelloWorld);
 // AppRegistry.registerComponent('HelloWorld', ()=>FlexTest);
@@ -30,4 +31,4 @@ import MainPage from './app/eyepetizer_demo/MainPage';
 // AppRegistry.registerComponent('HelloWorld', ()=>AnatomyTest);
 // AppRegistry.registerComponent('HelloWorld', ()=>ScrollViewTest);
 // AppRegistry.registerComponent('HelloWorld', ()=>ListViewTest);
-AppRegistry.registerComponent('HelloWorld', ()=>MainPage);
+AppRegistry.registerComponent('HelloWorld', ()=>StartUp);

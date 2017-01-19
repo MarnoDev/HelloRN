@@ -40,7 +40,9 @@ export default class MainPage extends Component {
 
     render() {
         return (
-            <TabNavigator tabBarStyle={MainPageStyle.tab_container} tabBarShadowStyle={{height:0}}>
+            <TabNavigator
+                tabBarStyle={MainPageStyle.tab_container}
+                tabBarShadowStyle={{height: 0}}>
                 {this._renderTabItem(SELECTED_TAG, SELECTED_TITLE, SELECTED_NORMAL, SELECTED_FOCUS)}
                 {this._renderTabItem(EXPLORE_TAG, EXPLORE_TITLE, EXPLORE_NORMAL, EXPLORE_FOCUS)}
                 {this._renderTabItem(FOLLOW_TAG, FOLLOW_TITLE, FOLLOW_NORMAL, FOLLOW_FOCUS)}
@@ -83,7 +85,7 @@ export default class MainPage extends Component {
     _createContentPage(tag) {
         switch (tag) {
             case SELECTED_TAG:
-                return (<SelectedPage/>);
+                return (<SelectedPage navigator={this.props.navigator}/>);
             case EXPLORE_TAG:
                 return (<BannerTest/>);
             case FOLLOW_TAG:

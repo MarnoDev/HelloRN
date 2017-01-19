@@ -3,10 +3,10 @@
  * Desc:使用ListView展示网络数据
  */
 import React, {Component} from "react";
-import {ListView, Text, RefreshControl} from "react-native";
+import {ListView, Text, RefreshControl,} from "react-native";
 import VideoListItem from "./VideoListItem";
 import ToastUtil from "../utils/ToastUtil";
-import BannerTest from "../03_library_demo/BannerTest";
+import VideoDetailPage from '../eyepetizer_demo/VideoDetailPage';
 
 //视频地址，下一页链接会在json中一起返回
 const videoUrl = 'http://baobab.wandoujia.com/api/v1/feed?num=1';
@@ -53,7 +53,7 @@ export default class ListViewTest extends Component {
                     refreshControl={
                         <RefreshControl
                             refreshing={this.state.isRefreshing}
-                            onRefresh={()=>this.fetchVideoList()}
+                            onRefresh={()=>this._fetchVideoList()}
                         />}
                 />
             )
@@ -74,19 +74,23 @@ export default class ListViewTest extends Component {
 
     //处理列表item的点击事件
     _onItemClick(rowData, rowId) {
-        ToastUtil.show("点击了" + rowId);
+        //ToastUtil.show("点击了" + rowId);
         const {navigator} = this.props;
-        if(navigator) {
+        if (navigator) {
             navigator.push({
-                name: 'BannerTest',
-                component: BannerTest,
+                name: 'VideoDetail',
+                component: VideoDetailPage,
+                params: {
+                    rowData: rowData,
+                    rowId: rowId,
+                }
             });
         }
 
     }
 
     //发起网络请求，获取数据
-    fetchVideoList() {
+    _fetchVideoList() {
         fetch(videoUrl)
             .then((response)=>response.json())
             .then(
@@ -115,6 +119,6 @@ export default class ListViewTest extends Component {
     //页面渲染完成后会主动回调该方法
     componentDidMount() {
         ToastUtil.show("组件加载完成，开始网络请求");
-        this.fetchVideoList();
+        this._fetchVideoList();
     }
 }
