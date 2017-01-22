@@ -10,6 +10,8 @@ import {
 } from "native-base";
 import JsonUtil from '../utils/JsonUtil';
 
+import ListViewPage from '../05_scroll_demo/ListViewTest'
+
 export default class VideoDetailPage extends Component {
     constructor(props) {
         super(props);
@@ -21,7 +23,7 @@ export default class VideoDetailPage extends Component {
             <Container>
                 <Header>
 
-                    <Button transparent>
+                    <Button transparent onPress={this._onBackPress}>
                         <Icon name='ios-arrow-back'/>
                     </Button>
 
@@ -37,5 +39,9 @@ export default class VideoDetailPage extends Component {
                 </Content>
             </Container>
         )
+    }
+
+    _onBackPress(){
+        this.props.navigator.pop();
     }
 }
