@@ -4,24 +4,23 @@
  * Desc:
  */
 import React, {Component} from 'react';
-import {Text} from 'react-native';
+import {Text, Navigator} from 'react-native';
 import {
     Container, Header, Title, Content, Button, Icon
 } from "native-base";
 import JsonUtil from '../utils/JsonUtil';
 
-import ListViewPage from '../05_scroll_demo/ListViewTest'
-
 export default class VideoDetailPage extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        //注意，如果不进行bind，是拿不到传递过来的默认属性的
+        this._onBackPress = this._onBackPress.bind(this);
     }
 
     render() {
         return (
             <Container>
-                <Header>
+                <Header style={{backgroundColor:'#333333',height:48}}>
 
                     <Button transparent onPress={this._onBackPress}>
                         <Icon name='ios-arrow-back'/>
@@ -41,7 +40,10 @@ export default class VideoDetailPage extends Component {
         )
     }
 
-    _onBackPress(){
-        this.props.navigator.pop();
+    _onBackPress() {
+        const {navigator} = this.props;
+        if(navigator) {
+            navigator.pop();
+        }
     }
 }

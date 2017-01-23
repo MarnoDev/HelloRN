@@ -7,6 +7,7 @@ import {StyleSheet, Image} from "react-native";
 import TabNavigator from "react-native-tab-navigator";
 import SelectedPage from "../05_scroll_demo/ListViewTest";
 import BannerTest from "../03_library_demo/BannerTest";
+import ProfilePage from './ProfilePage';
 
 const SELECTED_TAG = 'selected';
 const SELECTED_TITLE = '精选';
@@ -91,7 +92,7 @@ export default class MainPage extends Component {
             case FOLLOW_TAG:
                 return (<BannerTest/>);
             case PROFILE_TAG:
-                return (<BannerTest/>);
+                return (<ProfilePage navigator={this.props.navigator}/>);
         }
     }
 

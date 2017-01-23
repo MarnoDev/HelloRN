@@ -78,7 +78,7 @@ export default class ListViewTest extends Component {
         const {navigator} = this.props;
         if (navigator) {
             navigator.push({
-                name: 'VideoDetail',
+                name: 'VideoDetailPage',
                 component: VideoDetailPage,
                 params: {
                     rowData: rowData,
