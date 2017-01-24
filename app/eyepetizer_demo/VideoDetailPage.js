@@ -23,14 +23,11 @@ export default class VideoDetailPage extends Component {
                 <Header style={{backgroundColor:'#333333',height:48}}>
 
                     <Button transparent onPress={this._onBackPress}>
-                        <Icon name='ios-arrow-back'/>
+                        <Icon name='md-arrow-back'/>
                     </Button>
 
                     <Title>Beauty</Title>
 
-                    <Button transparent>
-                        <Icon name='ios-menu'/>
-                    </Button>
                 </Header>
 
                 <Content>

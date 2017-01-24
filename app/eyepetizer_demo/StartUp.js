@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Navigator} from "react-native";
+import {Navigator, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import MainPage from "./MainPage";
 /**
  * Created by marno on 2017/1/19

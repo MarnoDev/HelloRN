@@ -7,8 +7,9 @@ import React, {Component} from 'react';
 import {StyleSheet, View, Image, Text, ScrollView, TouchableWithoutFeedback} from 'react-native';
 import {List, ListItem} from 'native-base';
 
-import VideoDetailPage from '../eyepetizer_demo/VideoDetailPage';
 import ToastUtil from "../utils/ToastUtil";
+import VideoDetailPage from '../eyepetizer_demo/VideoDetailPage';
+import LoginPage from '../input_demo/TextInputTest';
 
 /**
  * 个人中心，头像，昵称部分
@@ -66,26 +67,21 @@ class MyItem extends Component {
             <Text
                 tag={this.props.tag}
                 style={ProfilePageStyle.tv_myItem}
-                onPress={()=>this._onItemClick()}
+                onPress={this.props.onItemClick}
             >{this.props.title}</Text>
         )
     }
-
-    _onItemClick() {
-        let tag = this.props.tag;
-        switch (tag) {
-            default:
-                ToastUtil.show("点击了 => " + this.props.title);
-                break;
-        }
-    }
 }
 
-
+/**
+ * 个人中心页面
+ */
 export default class ProfilePage extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            isLogin: false,
+        };
     }
 
 
@@ -104,15 +100,25 @@ export default class ProfilePage extends Component {
                     style={{backgroundColor: 'white'}}
                     showsVerticalScrollIndicator={false}
                 >
-                    <MyItem tag={MYITEM[0]} title="我的消息"/>
-                    <MyItem tag={MYITEM[1]} title="我的关注"/>
-                    <MyItem tag={MYITEM[2]} title="我的缓存"/>
-                    <MyItem tag={MYITEM[3]} title="意见反馈"/>
-                    <MyItem tag={MYITEM[4]} title="我要投稿"/>
+                    <MyItem title="我的消息" onItemClick={()=>this._onItemClick(MYITEM[0])}/>
+                    <MyItem title="我的关注" onItemClick={()=>this._onItemClick(MYITEM[1])}/>
+                    <MyItem title="我的缓存" onItemClick={()=>this._onItemClick(MYITEM[2])}/>
+                    <MyItem title="意见反馈" onItemClick={()=>this._onItemClick(MYITEM[3])}/>
+                    <MyItem title="我要投稿" onItemClick={()=>this._onItemClick(MYITEM[4])}/>
                 </ScrollView>
             </View>
         )
 
+    }
+
+    //item点击事件
+    _onItemClick(tag) {
+        switch (tag) {
+            default:
+                // ToastUtil.show("点击了 => " + tag);
+                this._toLoginPage();
+                break;
+        }
     }
 
     //点击跳转设置界面
@@ -147,6 +153,28 @@ export default class ProfilePage extends Component {
     //评论点击事件
     _onReplyClick() {
         ToastUtil.show("点击了评论");
+    }
+
+    //跳转到登录页面
+    _toLoginPage() {
+        if (this.state.isLogin) {
+            return ToastUtil.show("您已登录，无需重复登录！若要打开登录界面，请在设置中退出登录");
+        }
+        ToastUtil.show('请先登录')
+        const {navigator} = this.props;
+        if (navigator) {
+            navigator.push({
+                name: 'LoginPage',
+                component: LoginPage,
+                params: {
+                    //该方法用于下一个页面的数据回传
+                    getIsLogin:(isLogin)=>{this.setState({
+                        isLogin:isLogin
+                    })}
+
+                }
+            })
+        }
     }
 }
 

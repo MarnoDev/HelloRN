@@ -79,6 +79,8 @@ export default class ListViewTest extends Component {
         if (navigator) {
             navigator.push({
                 name: 'VideoDetailPage',
+                //这里跳转到VideoDetailPage后，后自动向该页面属性中注入navigator对象
+                //在VideoDetailPage就可以直接通过props获取，其他地方也一样
                 component: VideoDetailPage,
                 params: {
                     rowData: rowData,
