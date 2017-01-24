@@ -120,7 +120,7 @@ export default class ListViewTest extends Component {
 
     //页面渲染完成后会主动回调该方法
     componentDidMount() {
-        ToastUtil.show("组件加载完成，开始网络请求");
+        // ToastUtil.show("组件加载完成，开始网络请求");
         this._fetchVideoList();
     }
 }

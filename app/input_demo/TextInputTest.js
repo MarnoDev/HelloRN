@@ -16,7 +16,7 @@ export default class TextInputTest extends Component {
         this.state = {
             account: '',
             password: '',
-            getVerifyString: '获取验证码',
+            verifyString: '获取验证码',
             isCounting: false,
         };
     }
@@ -67,8 +67,8 @@ export default class TextInputTest extends Component {
                             />
 
                             <Text
-                                onPress={this._fetchVerifyCode()}
-                                style={TextInputStyle.tv_verify_code}>{this.state.getVerifyString}</Text>
+                                onPress={()=>this._fetchVerifyCode()}
+                                style={TextInputStyle.tv_verify_code}>{this.state.verifyString}</Text>
 
                         </View>
                         <Button
@@ -92,26 +92,16 @@ export default class TextInputTest extends Component {
 
     //点击登录
     _onLoginButtonClick() {
-        // return this._checkAccount() && this._checkPassword();
-        // this._login();
-    }
-
-    //验证账号格式
-    _checkAccount() {
         if (!this.state.account) {
             return ToastUtil.show("请输入手机号");
         } else if (this.state.account.length < 11) {
             return ToastUtil.show("手机号格式有误");
-        }
-    }
-
-    //验证验证码格式
-    _checkPassword() {
-        if (!this.state.password) {
+        } else if (!this.state.password) {
             return ToastUtil.show("请输入验证码");
         } else if (this.state.password.length < 6) {
             return ToastUtil.show("验证码必须为6位数")
         }
+        this._login();
     }
 
     //模拟登录操作
@@ -125,15 +115,31 @@ export default class TextInputTest extends Component {
 
     //获取验证码
     _fetchVerifyCode() {
+        if (!this.state.account) {
+            return ToastUtil.show("请输入手机号");
+        } else if (this.state.account.length < 11) {
+            return ToastUtil.show("手机号格式有误");
+        }
         if (this.state.isCounting) {
             return;
         } else {
-
+            this._startCounting();
         }
 
     }
 
+    _startCounting() {
+        var total = 60;
+        this.interval = setInterval(()=> {
+            this.setState({
+                verifyString: total--,
+            })
+        }, 1000);
+    }
 
+    componentWillUnMount() {
+        this.interval && clearInterval(this.interval);
+    }
 }
 
 
