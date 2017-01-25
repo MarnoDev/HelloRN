@@ -1,8 +1,3 @@
-/**
- * Created by marno on 2017/1/24
- * Function:
- * Desc:
- */
 import React, {Component} from 'react';
 import {View, Text, TextInput, StyleSheet, Navigator} from 'react-native';
 import {
@@ -10,6 +5,11 @@ import {
 } from "native-base";
 import ToastUtil from "../utils/ToastUtil";
 
+/**
+ * Created by marno on 2017/1/24
+ * Function:检测用户输入
+ * Desc:
+ */
 export default class TextInputTest extends Component {
     constructor(props) {
         super(props);
@@ -132,8 +132,17 @@ export default class TextInputTest extends Component {
         var total = 60;
         this.interval = setInterval(()=> {
             this.setState({
-                verifyString: total--,
+                verifyString: total-- + 's 后重新获取',
+                isCounting: true,
             })
+
+            if (total <= 0) {
+                this.interval && clearInterval(this.interval);
+                this.setState({
+                    verifyString: '重新获取',
+                    isCounting: false,
+                })
+            }
         }, 1000);
     }
 
@@ -167,7 +176,7 @@ const TextInputStyle = StyleSheet.create({
         paddingVertical: 8,
     },
     input_password: {
-        flex: 1,
+        flexGrow: 4,
         fontSize: 14,
         paddingVertical: 8,
     },
@@ -179,6 +188,8 @@ const TextInputStyle = StyleSheet.create({
     },
     tv_verify_code: {
         color: '#333',
+        flexGrow: 1,
+        textAlign: 'center'
     },
     btn_commit: {
         height: 48,

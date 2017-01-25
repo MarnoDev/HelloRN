@@ -88,9 +88,9 @@ export default class MainPage extends Component {
             case SELECTED_TAG:
                 return (<SelectedPage navigator={this.props.navigator}/>);
             case EXPLORE_TAG:
-                return (<BannerTest/>);
+                return (<BannerTest navigator={this.props.navigator}/>);
             case FOLLOW_TAG:
-                return (<BannerTest/>);
+                return (<BannerTest navigator={this.props.navigator}/>);
             case PROFILE_TAG:
                 return (<ProfilePage navigator={this.props.navigator}/>);
         }

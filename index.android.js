@@ -5,6 +5,7 @@
 'use strict'
 import React, {Component} from "react";
 import {AppRegistry} from "react-native";
+import storage from './app/utils/StorageUtil';
 
 // import HelloWorld from "./app/00_helloworld_demo/HelloWorld";
 // import FlexTest from "./app/01_flex_demo/FlexTest";
