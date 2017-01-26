@@ -12,6 +12,7 @@
     "react-native": "^0.40.0",
     "react-native-banner": "^0.1.0",
     "react-native-easy-toast": "^1.0.5",
+    "react-native-parallax-scroll-view": "^0.19.0",
     "react-native-scrollable-tab-view": "^0.7.0",
     "react-native-sk-countdown": "^1.0.1",
     "react-native-storage": "^0.1.4",

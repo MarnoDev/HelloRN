@@ -9,7 +9,7 @@ import {List, ListItem} from 'native-base';
 
 import ToastUtil from "../utils/ToastUtil";
 import VideoDetailPage from '../eyepetizer_demo/VideoDetailPage';
-import LoginPage from '../input_demo/TextInputTest';
+import LoginPage from '../06_input_demo/TextInputTest';
 
 /**
  * 个人中心，头像，昵称部分

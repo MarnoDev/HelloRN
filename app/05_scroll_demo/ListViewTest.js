@@ -3,10 +3,13 @@
  * Desc:使用ListView展示网络数据
  */
 import React, {Component} from "react";
-import {ListView, Text, RefreshControl,} from "react-native";
+import {ListView, Text, RefreshControl, StyleSheet, View, Image} from "react-native";
+
 import VideoListItem from "./VideoListItem";
 import ToastUtil from "../utils/ToastUtil";
 import VideoDetailPage from '../eyepetizer_demo/VideoDetailPage';
+import ParallaxScrollView from 'react-native-parallax-scroll-view';
+import DimensUtil from '../utils/DimensUtil';
 
 //视频地址，下一页链接会在json中一起返回
 const videoUrl = 'http://baobab.wandoujia.com/api/v1/feed?num=1';
@@ -45,6 +48,11 @@ export default class ListViewTest extends Component {
     //渲染列表
     _renderList() {
         if (this.state.data) {
+            //通过解构赋值
+            const {
+                onScroll = ()=> {
+                }
+            } = this.props;
             return (
                 <ListView
                     dataSource={this.state.dataSource.cloneWithRows(this.state.data)}
@@ -55,6 +63,33 @@ export default class ListViewTest extends Component {
                             refreshing={this.state.isRefreshing}
                             onRefresh={()=>this._fetchVideoList()}
                         />}
+                    renderScrollComponent={props=>(
+                        <ParallaxScrollView
+                            onScroll={onScroll}
+                            parallaxHeaderHeight={210}
+                            backgroundSpeed={0}
+                            fadeOutForeground={false}
+                            renderBackground={()=>(
+                                <View key="background">
+                                    <Image
+                                        style={styles.img_header_background}
+                                        source={require('../../imgs/home_page_header_cover.jpg')}>
+                                        <View key="parallax-header" style={ styles.parallaxHeader }>
+                                            <Image style={ styles.avatar }
+                                                   source={require('../../imgs/home_page_header_icon.png')}/>
+                                            <Text style={ styles.sectionSpeakerText }>
+                                                {new Date().getFullYear()}
+                                            </Text>
+                                        </View>
+
+                                    </Image>
+                                </View>
+                            )}
+
+
+                        />
+                    )}
+
                 />
             )
         } else {
@@ -124,3 +159,26 @@ export default class ListViewTest extends Component {
         this._fetchVideoList();
     }
 }
+
+const styles = StyleSheet.create({
+    parallaxHeader: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+
+    },
+    sectionSpeakerText: {
+        color: 'white',
+        fontSize: 15,
+    },
+    avatar: {
+        height: 150,
+        width: 150,
+    },
+    img_header_background: {
+        width: DimensUtil.getScreenWidth(),
+        height: 210,
+        resizeMode:'cover'
+    }
+
+})
