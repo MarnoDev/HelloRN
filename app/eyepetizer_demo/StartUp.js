@@ -13,7 +13,7 @@ let isFirstQuit = 0;
  * Created by marno on 2017/1/19
  * Desc:全局配置Navigator,并且需要将该页面在index中设置为启动页
  */
-export default class StartUp extends Component {
+export default class InitApp extends Component {
     constructor(props) {
         super(props);
         this.state = {};

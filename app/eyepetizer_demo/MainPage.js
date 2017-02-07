@@ -86,7 +86,7 @@ export default class MainPage extends Component {
     _createContentPage(tag) {
         switch (tag) {
             case SELECTED_TAG:
-                return (<SelectedPage navigator={this.props.navigator}/>);
+                return (<SelectedPage {...this.props}/>);
             case EXPLORE_TAG:
                 return (<BannerTest navigator={this.props.navigator}/>);
             case FOLLOW_TAG:
