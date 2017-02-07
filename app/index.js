@@ -20,6 +20,7 @@ import storage from './utils/StorageUtil';
 // import ListViewTest from './app/05_scroll_demo/ListViewTest';
 // import MainPage from './app/eyepetizer_demo/MainPage';
 import StartUp from './eyepetizer_demo/StartUp';
+// import ParallaxTest from './03_library_demo/ParallaxTest';
 
 // AppRegistry.registerComponent('HelloWorld', () => HelloWorld);
 // AppRegistry.registerComponent('HelloWorld', ()=>FlexTest);
@@ -33,3 +34,4 @@ import StartUp from './eyepetizer_demo/StartUp';
 // AppRegistry.registerComponent('HelloWorld', ()=>ScrollViewTest);
 // AppRegistry.registerComponent('HelloWorld', ()=>ListViewTest);
 AppRegistry.registerComponent('HelloWorld', ()=>StartUp);
+// AppRegistry.registerComponent('HelloWorld', ()=>ParallaxTest);

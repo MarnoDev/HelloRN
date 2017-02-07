@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
     img_header_background: {
         width: DimensUtil.getScreenWidth(),
         height: 210,
-        resizeMode:'cover'
+        resizeMode: 'cover'
     }
 
 })

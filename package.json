@@ -4,14 +4,16 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "eject-native-base": "node node_modules/native-base/ejectTheme.js"
   },
   "dependencies": {
-    "native-base": "^0.5.22",
+    "native-base": "^2.0.0",
     "react": "15.4.1",
     "react-native": "^0.40.0",
     "react-native-banner": "^0.1.0",
     "react-native-easy-toast": "^1.0.5",
+    "react-native-media-kit": "0.0.14",
     "react-native-parallax-scroll-view": "^0.19.0",
     "react-native-scrollable-tab-view": "^0.7.0",
     "react-native-sk-countdown": "^1.0.1",
@@ -21,6 +23,8 @@
     "react-native-tab-view": "0.0.48",
     "react-native-tabbar-navigator": "^0.4.2",
     "react-native-vector-icons": "^4.0.0",
+    "react-native-video": "^1.0.0",
+    "react-native-video-player": "^0.5.1",
     "react-native-xtabbar": "^0.2.1"
   },
   "jest": {
