@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, TextInput, StyleSheet, Navigator} from 'react-native';
 import {
-    Container, Header, Title, Content, Icon, Button
+    Container, Header, Title, Content, Icon, Button, Left, Body
 } from "native-base";
 import ToastUtil from "../utils/ToastUtil";
 
@@ -26,11 +26,16 @@ export default class TextInputTest extends Component {
             <Container>
                 <Header style={{backgroundColor: 'white', height: 48}}>
 
-                    <Button transparent onPress={()=>this._onCloseClick()}>
-                        <Icon name='md-arrow-back' style={{color: '#333'}}/>
-                    </Button>
+                    <Left>
+                        <Button transparent onPress={()=>this._onCloseClick()}>
+                            <Icon name='arrow-back' style={{color: '#333'}}/>
+                        </Button>
+                    </Left>
 
+                    <Body>
                     <Title style={{color: '#333'}}>登录</Title>
+
+                    </Body>
 
                 </Header>
 
@@ -71,10 +76,11 @@ export default class TextInputTest extends Component {
                                 style={TextInputStyle.tv_verify_code}>{this.state.verifyString}</Text>
 
                         </View>
-                        <Button
-                            onPress={()=>this._onLoginButtonClick()}
-                            textStyle={{fontSize: 18}}
-                            block style={TextInputStyle.btn_commit}>登录</Button>
+                        <Button block
+                                onPress={()=>this._onLoginButtonClick()}
+                                style={TextInputStyle.btn_commit}>
+                            <Text style={{fontSize: 18, color: 'white'}}>登录</Text>
+                        </Button>
                     </View>
 
                 </Content>

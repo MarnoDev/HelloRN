@@ -5,7 +5,6 @@
  */
 import React, {Component} from 'react';
 import {StyleSheet, View, Image, Text, ScrollView, TouchableWithoutFeedback} from 'react-native';
-import {List, ListItem} from 'native-base';
 
 import ToastUtil from "../utils/ToastUtil";
 import VideoDetailPage from '../eyepetizer_demo/VideoDetailPage';
