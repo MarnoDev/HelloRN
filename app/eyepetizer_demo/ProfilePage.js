@@ -20,7 +20,7 @@ class Header extends Component {
                 <View style={{alignItems: 'flex-end'}}>
                     <TouchableWithoutFeedback onPress={this.props.onSettingClick}>
                         <Image
-                            source={require('../../imgs/ic_menu_more.png')}
+                            source={require('./ic_menu_more.png')}
                             style={ProfilePageStyle.btn_setting}/>
                     </TouchableWithoutFeedback>
 
@@ -29,7 +29,7 @@ class Header extends Component {
                     <TouchableWithoutFeedback onPress={this.props.onAvatarClick}>
                         <Image
                             style={ProfilePageStyle.img_avatar}
-                            source={require('../../imgs/avatar.png')}
+                            source={require('./avatar.png')}
                         /></TouchableWithoutFeedback>
                     <Text onPress={this.props.onNameClick}>Marno</Text>
                 </View>
@@ -38,7 +38,7 @@ class Header extends Component {
                         <View style={ProfilePageStyle.container_favority}>
                             <Image
                                 style={ProfilePageStyle.img_favority}
-                                source={require('../../imgs/ic_action_favorites_grey.png')}/>
+                                source={require('./ic_action_favorites_grey.png')}/>
                             <Text style={ProfilePageStyle.tv_favority}>收藏</Text>
                         </View>
                     </TouchableWithoutFeedback>
@@ -46,7 +46,7 @@ class Header extends Component {
                         <View style={ProfilePageStyle.container_reply}>
                             <Image
                                 style={ProfilePageStyle.img_reply}
-                                source={require('../../imgs/ic_action_reply_grey.png')}/>
+                                source={require('./ic_action_reply_grey.png')}/>
                             <Text style={ProfilePageStyle.tv_reply}>评论</Text>
                         </View>
                     </TouchableWithoutFeedback>
