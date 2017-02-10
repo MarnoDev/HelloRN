@@ -7,7 +7,7 @@ import {ListView, Text, RefreshControl, StyleSheet, View, Image} from "react-nat
 
 import VideoListItem from "./VideoListItem";
 import ToastUtil from "../utils/ToastUtil";
-import VideoDetailPage from '../eyepetizer_demo/VideoDetailPage';
+import VideoDetailPage from '../eyepetizer_demo/video_detail/VideoDetailPage';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import DimensUtil from '../utils/DimensUtil';
 

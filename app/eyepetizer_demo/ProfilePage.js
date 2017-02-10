@@ -7,7 +7,7 @@ import React, {Component} from 'react';
 import {StyleSheet, View, Image, Text, ScrollView, TouchableWithoutFeedback} from 'react-native';
 
 import ToastUtil from "../utils/ToastUtil";
-import VideoDetailPage from '../eyepetizer_demo/VideoDetailPage';
+import VideoDetailPage from './video_detail/VideoDetailPage';
 import LoginPage from '../06_input_demo/TextInputTest';
 
 /**
