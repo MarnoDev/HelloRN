@@ -4,6 +4,7 @@ import {
     Container, Header, Title, Content, Icon, Button, Left, Body
 } from "native-base";
 import ToastUtil from "../utils/ToastUtil";
+import stroage from '../utils/StorageUtil';
 
 /**
  * Created by marno on 2017/1/24
@@ -112,7 +113,21 @@ export default class TextInputTest extends Component {
 
     //模拟登录操作
     _login() {
-        ToastUtil.show("登录成功")
+        ToastUtil.show("登录成功");
+        // 使用key来保存数据。这些数据一般是全局独有的，常常需要调用的。
+        // 除非你手动移除，这些数据会被永久保存，而且默认不会过期。
+        storage.save({
+            key: 'loginState',  // 注意:请不要在key中使用_下划线符号!
+            rawData: {
+                from: 'some other site',
+                userid: 'some userid',
+                token: 'some token'
+            },
+
+            // 如果不指定过期时间，则会使用defaultExpires参数
+            // 如果设为null，则永不过期
+            expires: 1000 * 3600
+        });
         if (this.props.getIsLogin) {
             this.props.getIsLogin(true);
         }

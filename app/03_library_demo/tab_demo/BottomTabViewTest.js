@@ -18,7 +18,7 @@ export default class BottomTabViewTest extends Component {
     state = {
         index: 0,
         routes: [
-            { key: '1', title: 'First', icon: '../../../imgs/ic_home.png' },
+            { key: '1', title: 'First', icon: '../../imgs/ic_home.png' },
             { key: '2', title: 'Second', icon: '../../../imgs/ic_yaomeirong.png' },
             { key: '3', title: 'Third', icon: '../../../imgs/ic_shop.png' },
         ],

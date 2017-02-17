@@ -73,10 +73,10 @@ export default class ListViewTest extends Component {
                                 <View key="background">
                                     <Image
                                         style={styles.img_header_background}
-                                        source={require('./home_page_header_cover.jpg')}>
+                                        source={require('../imgs/home_page_header_cover.jpg')}>
                                         <View key="parallax-header" style={ styles.parallaxHeader }>
                                             <Image style={ styles.avatar }
-                                                   source={require('./home_page_header_icon.png')}/>
+                                                   source={require('../imgs/home_page_header_icon.png')}/>
                                             <Text style={ styles.sectionSpeakerText }>
                                                 {new Date().getFullYear()}
                                             </Text>

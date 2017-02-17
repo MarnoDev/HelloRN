@@ -11,23 +11,23 @@ import ProfilePage from './ProfilePage';
 
 const SELECTED_TAG = 'selected';
 const SELECTED_TITLE = '精选';
-const SELECTED_NORMAL = require('./ic_tab_strip_icon_feed.png');
-const SELECTED_FOCUS = require('./ic_tab_strip_icon_feed_selected.png');
+const SELECTED_NORMAL = require('../imgs/ic_tab_strip_icon_feed.png');
+const SELECTED_FOCUS = require('../imgs/ic_tab_strip_icon_feed_selected.png');
 
 const EXPLORE_TAG = 'explore';
 const EXPLORE_TITLE = '发现';
-const EXPLORE_NORMAL = require('./ic_tab_strip_icon_category.png');
-const EXPLORE_FOCUS = require('./ic_tab_strip_icon_category_selected.png');
+const EXPLORE_NORMAL = require('../imgs/ic_tab_strip_icon_category.png');
+const EXPLORE_FOCUS = require('../imgs/ic_tab_strip_icon_category_selected.png');
 
 const FOLLOW_TAG = 'follow';
 const FOLLOW_TITLE = '关注';
-const FOLLOW_NORMAL = require('./ic_tab_strip_icon_follow.png');
-const FOLLOW_FOCUS = require('./ic_tab_strip_icon_follow_selected.png');
+const FOLLOW_NORMAL = require('../imgs/ic_tab_strip_icon_follow.png');
+const FOLLOW_FOCUS = require('../imgs/ic_tab_strip_icon_follow_selected.png');
 
 const PROFILE_TAG = 'profile';
 const PROFILE_TITLE = '我的';
-const PROFILE_NORMAL = require('./ic_tab_strip_icon_profile.png');
-const PROFILE_FOCUS = require('./ic_tab_strip_icon_profile_selected.png');
+const PROFILE_NORMAL = require('../imgs/ic_tab_strip_icon_profile.png');
+const PROFILE_FOCUS = require('../imgs/ic_tab_strip_icon_profile_selected.png');
 
 export default class MainPage extends Component {
 

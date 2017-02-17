@@ -43,7 +43,7 @@ export default class VideoDetailPage extends Component {
                         source={{uri: rowData.coverForDetail}}>
                         <Image
                             style={styles.img_icon_play}
-                            source={require('.././ic_action_play.png')}></Image>
+                            source={require('../../imgs/ic_action_play.png')}></Image>
                     </Image>
                 </TouchableWithoutFeedback>
                 <Image
@@ -58,10 +58,10 @@ export default class VideoDetailPage extends Component {
                             style={styles.txt_description}
                         >{rowData.description}</Text>
                         <View style={{flexDirection: 'row', position: 'absolute', bottom: -100, left: 20}}>
-                            <ActionIcon source={require('.././ic_action_favorites_without_padding.png')}/>
-                            <ActionIcon source={require('.././ic_action_share_without_padding.png')}/>
-                            <ActionIcon source={require('.././ic_action_reply_nopadding.png')}/>
-                            <ActionIcon source={require('.././ic_action_offline_without_padding.png')}/>
+                            <ActionIcon source={require('../../imgs/ic_action_favorites_without_padding.png')}/>
+                            <ActionIcon source={require('../../imgs/ic_action_share_without_padding.png')}/>
+                            <ActionIcon source={require('../../imgs/ic_action_reply_nopadding.png')}/>
+                            <ActionIcon source={require('../../imgs/ic_action_offline_without_padding.png')}/>
                         </View>
                     </View>
                 </Image>
