@@ -16,23 +16,23 @@ export default class FetchNetData extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            shop: null
+            user: null
         };
     }
 
     //发起网络请求，获取数据
-    fetchShopList() {
-        const url = 'http://120.25.102.194/index.php/api/shop/shopList';
+    fetchUserList() {
+        const url = 'https://api.github.com/users/mralexgray/repos';
         fetch(url)
             .then((response)=>response.json())
             .then(
                 (responseJson)=> {
-                    var shop = responseJson.data.shop;
+                    var users = responseJson;
                     ToastAndroid.show(responseJson.msg, ToastAndroid.SHORT)
-                    var firstShop = shop[0];
-                    console.log(firstShop);
+                    var firstUser = users[0].owner;
+                    console.log(firstUser);
                     this.setState({
-                        shop: firstShop,
+                        user: firstUser,
                     })
                 }
             )
@@ -41,12 +41,12 @@ export default class FetchNetData extends Component {
 
     //页面渲染完成后会主动回调该方法
     componentDidMount() {
-        this.fetchShopList();
+        this.fetchUserList();
     }
 
     //绘制界面
     render() {
-        let item = this.state.shop;
+        let item = this.state.user;
         //这里需要判断网络请求完成与否，如果item为空时，会发生空指针
         if (item) {
             return this.renderItem(item);
@@ -59,18 +59,18 @@ export default class FetchNetData extends Component {
     //绘制展示数据的界面
     renderItem(item) {
         return (
-            <View style={ShopItemStyle.container_out}>
-                <Image style={ShopItemStyle.image_shopLogo} source={{uri: item.shop_logo}}/>
-                <View style={ShopItemStyle.container_right}>
-                    <Text style={ShopItemStyle.text_shopName}>{item.shop_name}</Text>
-                    <Text style={ShopItemStyle.text_shopAddress}>{item.shop_address}</Text>
+            <View style={UserItemStyle.container_out}>
+                <Image style={UserItemStyle.image_UserAvatar} source={{uri: item.avatar_url}}/>
+                <View style={UserItemStyle.container_right}>
+                    <Text style={UserItemStyle.text_UserID}>{item.id}</Text>
+                    <Text style={UserItemStyle.text_UserType}>{item.type}</Text>
                 </View>
             </View>
         )
     }
 }
 
-const ShopItemStyle = StyleSheet.create({
+const UserItemStyle = StyleSheet.create({
     container_out: {
         backgroundColor: "white",
         height: 100,
@@ -82,19 +82,19 @@ const ShopItemStyle = StyleSheet.create({
         height: 80,
         flexGrow: 1,
     },
-    image_shopLogo: {
+    image_UserAvatar: {
         borderRadius: 80,
         width: 80,
         height: 80,
         resizeMode: "cover",
         marginHorizontal: 12
     },
-    text_shopName: {
+    text_UserID: {
         color: "black",
         fontSize: 16,
         lineHeight: 24,
     },
-    text_shopAddress: {
+    text_UserType: {
         color: "gray",
         fontSize: 12,
         lineHeight: 20,
